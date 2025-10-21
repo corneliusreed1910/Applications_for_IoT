@@ -1,0 +1,21 @@
+//  Eduardo Peinado
+//  https://github.com/corneliusreed1910
+//  Student number: 22073
+//  TIADSM05A
+//  Tuesday, October 21th, 2025
+//  Subject: Applications for Internet of Things (AIoT)
+//  ACT1_01: turn on a LED
+//  Profe. Rocío del Carmen Martínez Luna
+//  TIADSM (Tecnologías de la Información Área Desarrollo Software Multiplataforma)
+//  Universidad Tecnológica Santa Catarina
+//  Santa Catarina, Nuevo León, México
+
+#include <Arduino.h>
+
+void setup() {
+
+}
+
+void loop() {
+
+}
