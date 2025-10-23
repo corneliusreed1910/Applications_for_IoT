@@ -1,18 +1,26 @@
+//  Eduardo Peinado
+//  https://github.com/corneliusreed1910
+//  Student number: 22073
+//  TIADSM05A
+//  Tuesday, October 21th, 2025
+//  Subject: Applications for Internet of Things (AIoT)
+//  ACT1_02: blinking LED
+//  Profe. Rocío del Carmen Martínez Luna
+//  TIADSM (Tecnologías de la Información Área Desarrollo Software Multiplataforma)
+//  Universidad Tecnológica Santa Catarina
+//  Santa Catarina, Nuevo León, México
+
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+const int LED = 2;
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  pinMode(LED, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  digitalWrite(LED, HIGH);
+  delay(1000);
+  digitalWrite(LED, LOW);
+  delay(1000);
 }
