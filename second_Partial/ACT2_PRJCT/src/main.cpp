@@ -11,50 +11,135 @@
 //  Santa Catarina, Nuevo León, México
 
 #include <Arduino.h>
-#include <DHT.h>
 #include <SoftwareSerial.h>
-SoftwareSerial mySerial(7, 6); // RX, TX pins
+#include "DHT.h"
+
+#define DHTPIN 8
 #define DHTTYPE DHT11
 
-const int red_LED = 9;
-const int green_LED = 12;
-const int buzzer = 13;
-const int dht11_Sensor = 8;
-//const int bluetooth_RX = 7;
-//const int bluetooth_TX = 6;
+#define RED_LED 9
+#define GREEN_LED 12
+#define BUZZER 13
 
-DHT dht (dht11_Sensor, DHTTYPE);
+SoftwareSerial BT(3, 2); // RX, TX
+DHT dht(DHTPIN, DHTTYPE);
 
-void setup()
-{
-    mySerial.begin(9600); // For Bluetooth communication, match with module's baud rate
-    Serial.begin(9600);
-    pinMode(red_LED, OUTPUT);
-    pinMode(green_LED, OUTPUT);
-    pinMode(buzzer, OUTPUT);
-    Serial.println("Iniciando...");
-    dht.begin();
+unsigned long lastBuzz = 0;
+const unsigned long buzzCooldown = 3000; // 3 seconds
+
+void setup() {
+  pinMode(RED_LED, OUTPUT);
+  pinMode(GREEN_LED, OUTPUT);
+  pinMode(BUZZER, OUTPUT);
+
+  digitalWrite(RED_LED, LOW);
+  digitalWrite(GREEN_LED, LOW);
+  digitalWrite(BUZZER, LOW);
+
+  Serial.begin(9600);
+  BT.begin(9600);
+  dht.begin();
+
+  Serial.println("Bluetooth Control + DHT11 Ready!");
+  BT.println("Arduino Bluetooth Ready! Type commands:");
+  BT.println("'R ON', 'R OFF', 'G ON', 'G OFF', 'BUZZ', or 'DHT'");
 }
 
-void loop()
-{
-    delay(5000);
-    float humidity = dht.readHumidity();
-    float temperature =  dht.readTemperature();
-      if (mySerial.available()) {
-        char receivedChar = mySerial.read();
-        Serial.print("Received: ");
-        Serial.println(receivedChar);
-        // Process the received character (e.g., control an LED)
+void loop() {
+  if (BT.available()) {
+    String command = BT.readStringUntil('\n');
+    command.trim();
+    command.toUpperCase();
+    Serial.println("Received: " + command);
+
+    if (command == "R ON") {
+      digitalWrite(RED_LED, HIGH);
+      BT.println("Red LED ON");
+    } 
+    else if (command == "R OFF") {
+      digitalWrite(RED_LED, LOW);
+      BT.println("Red LED OFF");
+    } 
+    else if (command == "G ON") {
+      digitalWrite(GREEN_LED, HIGH);
+      BT.println("Green LED ON");
+    } 
+    else if (command == "G OFF") {
+      digitalWrite(GREEN_LED, LOW);
+      BT.println("Green LED OFF");
+    } 
+    else if (command == "BUZZ") {
+      unsigned long now = millis();
+      if (now - lastBuzz >= buzzCooldown) {
+        tone(BUZZER, 1000, 500); // Buzz for 0.5s
+        lastBuzz = now;
+        BT.println("Buzzer Activated!");
+      } else {
+        BT.println("Wait for cooldown!");
       }
-      if (Serial.available()) {
-        char sentChar = Serial.read();
-        mySerial.print(sentChar); // Send data from Arduino Serial Monitor to Bluetooth
+    } 
+    else if (command == "DHT") {
+      float h = dht.readHumidity();
+      float t = dht.readTemperature();
+
+      if (isnan(h) || isnan(t)) {
+        BT.println("Sensor error!");
+      } else {
+        BT.print("Temp: "); BT.print(t); BT.print(" °C | Hum: "); BT.print(h); BT.println(" %");
       }
-    Serial.print("Humidity: ");
-    Serial.print(humidity);
-    Serial.println(" %");
-    Serial.print("Temperature: ");
-    Serial.print(temperature);
-    Serial.println(" °C ");
+    } 
+    else {
+      BT.println("Unknown command!");
+    }
+  }
 }
+
+
+// #include <Arduino.h>
+// #include <DHT.h>
+// #include <SoftwareSerial.h>
+// SoftwareSerial mySerial(7, 6); // RX, TX pins
+// #define DHTTYPE DHT11
+
+// const int red_LED = 9;
+// const int green_LED = 12;
+// const int buzzer = 13;
+// const int dht11_Sensor = 8;
+// //const int bluetooth_RX = 7;
+// //const int bluetooth_TX = 6;
+
+// DHT dht (dht11_Sensor, DHTTYPE);
+
+// void setup()
+// {
+//     mySerial.begin(9600); // For Bluetooth communication, match with module's baud rate
+//     Serial.begin(9600);
+//     pinMode(red_LED, OUTPUT);
+//     pinMode(green_LED, OUTPUT);
+//     pinMode(buzzer, OUTPUT);
+//     Serial.println("Iniciando...");
+//     dht.begin();
+// }
+
+// void loop()
+// {
+//     delay(5000);
+//     float humidity = dht.readHumidity();
+//     float temperature =  dht.readTemperature();
+//       if (mySerial.available()) {
+//         char receivedChar = mySerial.read();
+//         Serial.print("Received: ");
+//         Serial.println(receivedChar);
+//         // Process the received character (e.g., control an LED)
+//       }
+//       if (Serial.available()) {
+//         char sentChar = Serial.read();
+//         mySerial.print(sentChar); // Send data from Arduino Serial Monitor to Bluetooth
+//       }
+//     Serial.print("Humidity: ");
+//     Serial.print(humidity);
+//     Serial.println(" %");
+//     Serial.print("Temperature: ");
+//     Serial.print(temperature);
+//     Serial.println(" °C ");
+// }
