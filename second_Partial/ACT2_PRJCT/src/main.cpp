@@ -4,7 +4,7 @@
 //  TIADSM05A
 //  Tuesday, October 21th, 2025
 //  Subject: Applications for Internet of Things (AIoT)
-//  ACT_PRJCT: Bluetooth module controlling a buzzer, two LEDs and a DHT11 temperature/himidity sensor through "Serial Bluetooth Terminal" app
+//  ACT_PRJCT: Bluetooth module controlling a buzzer, two LEDs and a DHT11 temperature/humidity sensor through "Serial Bluetooth Terminal" app
 //  Profe. Rocío del Carmen Martínez Luna
 //  TIADSM (Tecnologías de la Información Área Desarrollo Software Multiplataforma)
 //  Universidad Tecnológica Santa Catarina
