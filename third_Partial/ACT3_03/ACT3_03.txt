@@ -1,0 +1,45 @@
+//  Eduardo Peinado
+//  https://github.com/corneliusreed1910
+//  Student number: 22073
+//  TIADSM05A
+//  Friday, October 31st, 2025
+//  Subject: Applications for Internet of Things (AIoT)
+//  ACT3_03: Connection modules (Módulos de conectividad)
+//  Profe. Rocío del Carmen Martínez Luna
+//  TIADSM (Tecnologías de la Información Área Desarrollo Software Multiplataforma)
+//  Universidad Tecnológica Santa Catarina
+//  Santa Catarina, Nuevo León, México
+
+// Toggle line wrap
+
+
+Actividad 3, tercer parcial: Módulos de conectividad (continuación)
+
+Instrucciones: realiza las siguientes acciones en tu dispositivo móvil. Marca con una "√" (paloma) las que realices y describe lo que observaste.
+
+//  Las líneas 22-37 son una tabla.
+
+        Acción: Wi_Fi
+            (√): √
+                Resultado: Me conectó a la red "UTSC-Alumnos" y apagó mis datos móviles
+
+                
+        Acción: Bluetooth
+            (√): √
+                Resultado: Me mostró una lista de dispositivos cercanos disponibles
+
+        Acción: Datos móviles
+            (√): √
+                Resultado: Se conectó a la red de TELCEL y me advirtió acerca del uso de datos móviles
+
+        Acción: NFC
+            (√): √
+                Resultado: Me mandó una alerta de precaución
+
+¿Qué módulo de conectividad usas con más frecuencia y por qué? El de datos móviles, porque nunca estoy en mi casa. 
+
+¿Cuál crees que consume más batería? Bluetooth.
+
+¿Por qué es importante desactivar los módulos que NO estás usando? Para no gastar energía y no estar vulnerable a atacantes.
+
+¿Qué ventajas tiene configurar el módulo según tus necesidades? Usar el dispositivo tal y como necesitas que funcione, usas menos recursos de los que necesitas.

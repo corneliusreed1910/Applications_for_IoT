@@ -1,0 +1,56 @@
+//  Eduardo Peinado
+//  https://github.com/corneliusreed1910
+//  Student number: 22073
+//  TIADSM05A
+//  Wednesday, October 29th, 2025
+//  Subject: Applications for Internet of Things (AIoT)
+//  ACT3_02: Connection modules (Módulos de conectividad)
+//  Profe. Rocío del Carmen Martínez Luna
+//  TIADSM (Tecnologías de la Información Área Desarrollo Software Multiplataforma)
+//  Universidad Tecnológica Santa Catarina
+//  Santa Catarina, Nuevo León, México
+
+// Toggle line wrap
+
+
+Actividad 2, tercer parcial: Módulos de conectividad
+
+Son los componentes de teléfono o tableta que permiten comunicarse con otros dispositivos o redes. Ejemplos son Wi-Fi, Bluetooth, datos móviles, GPS, punto de acceso (hotspot).
+
+Instrucciones: en tu celular entra a "menú=>configuraciones=>conexiones". Observa los módulos que aparecen y anota lo siguiente:
+
+*   Nombre del módulo
+*   Para qué sirve
+*   Cómo se activa o desactiva
+
+//  Las líneas 28-55 son una tabla.
+
+        Módulo: Wi-Fi
+            Para qué sirve: Conectar a una red local
+                Cómo se activa: Con un botón en la barra de notificaciones
+                    Ejemplos de uso: Uso diario, indispensable
+
+
+        Módulo: Bluetooth
+            Para qué sirve: Conectar inalámbricamente un dispositivo
+                Cómo se activa: Con un botón en la barra de notificaciones
+                    Ejemplos de uso: Audífonos, transferencia de archivos
+
+
+        Módulo: Mobile data
+            Para qué sirve: Tener Internet en lugares donde no hay Wi-Fi
+                Cómo se activa: Con un botón en la barra de notificaciones
+                    Ejemplos de uso: Salir fuera de casa y necesitar comunicarse
+
+
+        Módulo: NFC
+            Para qué sirve: Dar autorización de algo
+                Cómo se activa: Configurandoló en la aplicación que dará el permiso
+                    Ejemplos de uso: Hacer un pago sin contacto
+
+
+        Módulo: GPS
+            Para qué sirve: Localizar el dispositivo en un determinado tiempo y lugar
+                Cómo se activa: Con un botón en la barra de notificaciones
+                    Ejemplos de uso:Life360, Google Maps, Whatsapp
+        
