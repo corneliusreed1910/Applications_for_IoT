@@ -2,7 +2,7 @@
 //  https://github.com/corneliusreed1910
 //  Student number: 22073
 //  TIADSM05A
-//  Wednesday, October 29th, 2025
+//  Tuesday, October 28th, 2025
 //  Subject: Applications for Internet of Things (AIoT)
 //  ACT3_02: Connection modules (Módulos de conectividad)
 //  Profe. Rocío del Carmen Martínez Luna
@@ -12,3 +12,6 @@
 
 // Toggle line wrap
 
+Actividad 1, tercer parcial:  elementos del lenguaje de programación con la comunicación TCP/indispensable
+
+// A continuación va el mapa conceptual del archivo ACT3_01.drawio
