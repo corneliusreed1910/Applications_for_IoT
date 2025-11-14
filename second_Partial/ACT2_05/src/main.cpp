@@ -4,7 +4,7 @@
 //  TIADSM05A
 //  Friday, October 24th, 2025
 //  Subject: Applications for Internet of Things (AIoT)
-//  ACT_05: controlling a DC motor's direction with pulsating switches through an H-bridge (L293D)
+//  ACT2_05: controlling a DC motor's direction with pulsating switches through an H-bridge (L293D)
 //  Profe. Rocío del Carmen Martínez Luna
 //  TIADSM (Tecnologías de la Información Área Desarrollo Software Multiplataforma)
 //  Universidad Tecnológica Santa Catarina

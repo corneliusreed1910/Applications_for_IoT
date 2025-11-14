@@ -21,8 +21,8 @@ blue = Pin(13, Pin.OUT)
 green = Pin(14, Pin.OUT)
 
 # Wi-Fi credentials
-ssid = 'YOUR_WIFI_NETWORK_NAME'
-password = 'YOUR_PASSWORD'
+ssid = 'KINGKONG9'
+password = 'chupamelasbolas1987'
 
 # Connect to Wi-Fi
 wlan = network.WLAN(network.STA_IF)
